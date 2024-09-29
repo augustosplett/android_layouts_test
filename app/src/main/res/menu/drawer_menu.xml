@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page1"
+        android:title="Home" />
+<!--    <item-->
+<!--        android:id="@+id/nav_settings"-->
+<!--        android:title="Settings" />-->
+    <item
+        android:id="@+id/nav_language"
+        android:title="Change Language" />
+</menu>

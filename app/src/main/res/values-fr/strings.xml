@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UI Showcase App - FR</string>
+    <string name="drawer_open">Ouvrir le menu de navigation</string>
+    <string name="drawer_close">Fermer le menu de navigation</string>
+</resources>
