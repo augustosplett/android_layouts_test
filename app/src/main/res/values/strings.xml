@@ -8,4 +8,8 @@
     <string name="page3">Page 3 - EN</string>
     <string name="page4">Page 4 - EN</string>
     <string name="change_language">Change to French</string>
+
+    <string name="page1_title">EN: LinearLayout Demo</string>
+    <string name="page1_label">Enter Any Text:</string>
+    <string name="page1_button_text">Click me</string>
 </resources>
