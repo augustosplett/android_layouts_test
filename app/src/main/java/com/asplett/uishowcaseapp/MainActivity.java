@@ -4,6 +4,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 import androidx.activity.EdgeToEdge;
@@ -22,88 +23,79 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private ActionBarDrawerToggle drawerToggle;
+    //declarando as variáveis que vamos precisar para fazer o menu funcionar
+    private DrawerLayout main; //activity_main.xml
+    private NavigationView navigationView;//navigation view incluída na main activity
+    private ActionBarDrawerToggle drawerToggle;//chave para mostrar/esconde o menu
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Configurar o DrawerLayout e o NavigationView
-        drawerLayout = findViewById(R.id.drawer_layout);
+        //relacionando o XML com a Classe para poder implementar a lógica
+        main = findViewById(R.id.main);
         navigationView = findViewById(R.id.navigation_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Configurar o botão de menu para abrir o Drawer
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
-        drawerLayout.addDrawerListener(drawerToggle);
+        //criando e inserindo o btãoq ue vai mostrar ou ocultar o menu
+        drawerToggle = new ActionBarDrawerToggle(this, main, toolbar, R.string.drawer_open, R.string.drawer_close);
+        main.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
-        loadFragment(new LinearLayoutDemo());
-//        // Configurar navegação do Navigation Drawer
-//        navigationView.setNavigationItemSelectedListener(item -> {
-//            switch (item.getItemId()) {
-//                case R.id.page1:
-//                    loadFragment(new LinearLayoutDemo());
-//                    break;
-////                case R.id.nav_settings:
-////                    loadFragment(new SettingsFragment());
-////                    break;
-////                case R.id.nav_language:
-////                    showLanguageDialog();
-////                    break;
-//            }
-//            drawerLayout.closeDrawers(); // Fechar o Drawer após a seleção
-//            return true;
-//        });
-
-//        // Exibir o primeiro fragmento ao iniciar
-//        if (savedInstanceState == null) {
-//            loadFragment(new LinearLayoutDemo());
-//        }
+        //logica de controle de mudança de página, neste caso, estou usando fragments
+        navigationView.setNavigationItemSelectedListener(item -> {
+            Log.d("item", "id do item:" + item.getItemId());
+            if (item.getItemId() == R.id.page1) {
+                loadFragment(new LinearLayoutDemo());
+            } else if (item.getItemId() == R.id.page2) {
+                loadFragment(new ConstraintLayoutDemo());
+            } else if (item.getItemId() == R.id.page3) {
+                loadFragment(new GridLayoutDemo());
+            } else if (item.getItemId() == R.id.page4) {
+                loadFragment(new ListLayoutDemo());
+            } else if (item.getItemId() == R.id.nav_language) {
+                toggleLanguage();
+                main.closeDrawers();
+            }
+            //fecha o menu apos alterar o fragment
+            main.closeDrawers();
+            return true;
+        });
+        //aqui define qual vai ser o primeiro elemento a ser carregado caso o usuário nunca tenha usado o app
+        if (savedInstanceState == null) {
+            loadFragment(new LinearLayoutDemo());
+        }
     }
-
+    //função que carrega o fragmento desejado na tela
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .commit();
     }
+    //função que muda a linguagem
+    public void toggleLanguage() {
+        String currentLanguage = getResources().getConfiguration().locale.getLanguage();
 
-    // Método para mostrar o diálogo de seleção de idioma
-    public void showLanguageDialog() {
-        final String[] languages = {"English", "Français"};
-
-        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
-        mBuilder.setTitle("Select Language");
-        mBuilder.setSingleChoiceItems(languages, -1, (dialog, which) -> {
-            if (which == 0) {
-                setLocale("en");  // Mudar para inglês
-            } else if (which == 1) {
-                setLocale("fr");  // Mudar para francês
-            }
-            dialog.dismiss();
-        });
-
-        AlertDialog mDialog = mBuilder.create();
-        mDialog.show();
+        if (currentLanguage.equals("en")) {
+            setLocale("fr");
+        } else {
+            setLocale("en");
+        }
     }
-
-    // Método para mudar o idioma
+    //recarrega as infos com a nova linguagem
     public void setLocale(String languageCode) {
         Locale locale = new Locale(languageCode);
         Locale.setDefault(locale);
         Resources resources = getResources();
         Configuration config = resources.getConfiguration();
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             config.setLocale(locale);
         } else {
             config.locale = locale;
         }
+
         resources.updateConfiguration(config, resources.getDisplayMetrics());
 
-        // Reiniciar a Activity para aplicar o novo idioma
         recreate();
     }
 }

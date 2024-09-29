@@ -2,4 +2,10 @@
     <string name="app_name">UI Showcase App</string>
     <string name="drawer_open">Open Navigation Drawer</string>
     <string name="drawer_close">Close Navigation Drawer</string>
+
+    <string name="page1">Page 1 - EN</string>
+    <string name="page2">Page 2 - EN</string>
+    <string name="page3">Page 3 - EN</string>
+    <string name="page4">Page 4 - EN</string>
+    <string name="change_language">Change to French</string>
 </resources>

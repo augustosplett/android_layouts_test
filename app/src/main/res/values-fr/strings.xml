@@ -2,4 +2,9 @@
     <string name="app_name">UI Showcase App - FR</string>
     <string name="drawer_open">Ouvrir le menu de navigation</string>
     <string name="drawer_close">Fermer le menu de navigation</string>
+    <string name="page1">Page 1 - FR</string>
+    <string name="page2">Page 2 - FR</string>
+    <string name="page3">Page 3 - FR</string>
+    <string name="page4">Page 4 - FR</string>
+    <string name="change_language">Modifier La Langue Lour L\'anglais</string>
 </resources>
