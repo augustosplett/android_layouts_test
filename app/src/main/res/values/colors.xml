@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="switch_thumb_color">#FF5722</color> <!-- Cor do polegar do Switch -->
+    <color name="switch_track_color">#FFC107</color> <!-- Cor da trilha do Switch -->
+    <color name="progress_color">#4CAF50</color> <!-- Cor da barra de progresso -->
+    <color name="fab_color">#2196F3</color> <!-- Cor do botão flutuante -->
+
 </resources>

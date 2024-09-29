@@ -13,4 +13,8 @@
     <string name="page1_label">Enter Any Text:</string>
     <string name="page1_button_text">Click me</string>
     <string name="page1_img_description">show da xuxa</string>
+
+    <string name="page2_floating_icon">Add floating Icon</string>
+    <string name="page2_toggle_on">On</string>
+    <string name="page2_toggle_off">Off</string>
 </resources>

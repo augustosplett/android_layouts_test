@@ -13,5 +13,8 @@
     <string name="page1_label">Entrez n\'importe quel texte</string>
     <string name="page1_button_text">Cliquez sur moi</string>
     <string name="page1_img_description">spectacle de xuxa</string>
+    <string name="page2_floating_icon">Ajouter une icône flottante</string>
+    <string name="page2_toggle_on">allumé</string>
+    <string name="page2_toggle_off">éteint</string>
 
 </resources>
