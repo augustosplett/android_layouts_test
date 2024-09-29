@@ -16,7 +16,20 @@
             android:background="?attr/colorPrimary"
             android:titleTextColor="@android:color/white"
             android:elevation="4dp"
-            android:title="@string/app_name" />
+            android:title="@string/app_name" >
+
+            <!-- Adicionando um Button dentro da Toolbar -->
+            <Button
+                android:id="@+id/toolbar_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="@string/change_language"
+                android:padding="8dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@android:color/holo_blue_light"/>
+        </androidx.appcompat.widget.Toolbar>
 
         <FrameLayout
             android:id="@+id/fragment_container"

@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.activity.EdgeToEdge;
@@ -37,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //botao para mudar idioma
+        Button toolbarButton = findViewById(R.id.toolbar_button);
+        toolbarButton.setOnClickListener(v -> {
+            toggleLanguage();
+        });
+
         //criando e inserindo o btãoq ue vai mostrar ou ocultar o menu
         drawerToggle = new ActionBarDrawerToggle(this, main, toolbar, R.string.drawer_open, R.string.drawer_close);
         main.addDrawerListener(drawerToggle);
@@ -52,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 loadFragment(new GridLayoutDemo());
             } else if (item.getItemId() == R.id.page4) {
                 loadFragment(new ListLayoutDemo());
-            } else if (item.getItemId() == R.id.nav_language) {
-                toggleLanguage();
-                main.closeDrawers();
             }
             //fecha o menu apos alterar o fragment
             main.closeDrawers();

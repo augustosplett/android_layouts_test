@@ -7,7 +7,7 @@
     <string name="page2">Page 2 - FR</string>
     <string name="page3">Page 3 - FR</string>
     <string name="page4">Page 4 - FR</string>
-    <string name="change_language">Modifier La Langue Lour L\'anglais</string>
+    <string name="change_language">English</string>
 
     <string name="page1_title">"FR: LinearLayout "</string>
     <string name="page1_label">Entrez n\'importe quel texte</string>
@@ -16,5 +16,7 @@
     <string name="page2_floating_icon">Ajouter une icône flottante</string>
     <string name="page2_toggle_on">allumé</string>
     <string name="page2_toggle_off">éteint</string>
+    <string name="page3_sample_label">sample_label</string>
+    <string name="page4_item_placeholder">item placeholder</string>
 
 </resources>

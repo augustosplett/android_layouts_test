@@ -11,7 +11,4 @@
     <item
         android:id="@+id/page4"
         android:title="@string/page4" />
-    <item
-        android:id="@+id/nav_language"
-        android:title="@string/change_language" />
 </menu>
