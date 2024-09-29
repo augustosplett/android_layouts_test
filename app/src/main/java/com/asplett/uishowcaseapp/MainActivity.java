@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
-
+        loadFragment(new LinearLayoutDemo());
 //        // Configurar navegação do Navigation Drawer
 //        navigationView.setNavigationItemSelectedListener(item -> {
 //            switch (item.getItemId()) {
@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
 //            return true;
 //        });
 
-        // Exibir o primeiro fragmento ao iniciar
-        if (savedInstanceState == null) {
-            loadFragment(new LinearLayoutDemo());
-        }
+//        // Exibir o primeiro fragmento ao iniciar
+//        if (savedInstanceState == null) {
+//            loadFragment(new LinearLayoutDemo());
+//        }
     }
 
     private void loadFragment(Fragment fragment) {
