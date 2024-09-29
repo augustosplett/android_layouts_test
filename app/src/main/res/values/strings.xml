@@ -12,4 +12,5 @@
     <string name="page1_title">EN: LinearLayout Demo</string>
     <string name="page1_label">Enter Any Text:</string>
     <string name="page1_button_text">Click me</string>
+    <string name="page1_img_description">show da xuxa</string>
 </resources>
