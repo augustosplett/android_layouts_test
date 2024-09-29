@@ -17,4 +17,16 @@
     <string name="page2_floating_icon">Add floating Icon</string>
     <string name="page2_toggle_on">On</string>
     <string name="page2_toggle_off">Off</string>
+
+    <string name="page3_sample_label">sample_label</string>
+
+    <string-array name="grid_item_labels">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
+    </string-array>
+
 </resources>
